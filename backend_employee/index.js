@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
-
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -22,8 +21,9 @@ mongoose
   });
 
 
-// Define routes (will add these later)
+
 app.use('/api/employees', require('./routes/employeeRoutes'));
+app.use('/api/user',require("./routes/userRoutes"));
 
 // Start the server
 const PORT = 4000;

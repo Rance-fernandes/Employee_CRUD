@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { JwtModule } from '@auth0/angular-jwt';
 
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 @NgModule({
   declarations: [AppComponent, EmpAddEditComponent],
   imports: [
@@ -45,7 +50,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,JwtModule,
-
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
